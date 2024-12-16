@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>to-do-list</title>
+  </head>
+  <body>
+    <h1>It is <%= dayType %>.</h1>
+
+    <ul>
+      <% item.forEach(function(element) { %>
+      <li><%= element %></li>
+      <% }); %>
+    </ul>
+
+    <form action="/" method="post">
+      <input
+        type="text"
+        id="addList"
+        name="addList"
+        placeholder="Add new task"
+      />
+      <input type="hidden" name="dayType" value="<%= dayType %>" />
+      <input type="submit" value="Add" />
+    </form>
+  </body>
+</html>
