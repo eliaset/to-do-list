@@ -1,28 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>to-do-list</title>
-    <link href="css/styles.css" rel="stylesheet" />
-  </head>
-  <body>
-    <div class="box" id="heading">
-      <h1>It is <%= dayType %>.</h1>
-    </div>
+<%- include("header") %>
+<body>
+  <div class="box" id="heading">
+    <h1><%= listTitle %></h1>
+  </div>
 
-    <div class="box">
-      <% item.forEach((element) => { %>
-      <div class="item">
-        <input type="checkbox" />
-        <p><%= element %></p>
-      </div>
-      <% }); %>
-
-      <form class="item" action="/" method="post">
-        <input type="text" id="addList" name="addList" placeholder="New Item" />
-        <button type="submit" name="button">+</button>
-      </form>
+  <div class="box">
+    <% item.forEach((element) => { %>
+    <div class="item">
+      <input type="checkbox" />
+      <p><%= element %></p>
     </div>
-  </body>
-</html>
+    <% }); %>
+
+    <form class="item" action="/" method="post">
+      <input type="text" id="addList" name="addList" placeholder="New Item" />
+      <button type="submit" name="list" value="<%= listTitle %>">+</button>
+    </form>
+  </div>
+</body>
+
+<%- include("footer") %>
