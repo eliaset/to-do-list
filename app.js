@@ -5,6 +5,7 @@ const app = express();
 const port = 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
+app.use(express.static("public"));
 
 var newItems = ["Buy Food", "Buy Liquid", "Cook Food", "Eat Food"];
 
